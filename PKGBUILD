@@ -3,7 +3,7 @@
 
 pkgname=ffmpeg
 pkgver=20080715
-pkgrel=3
+pkgrel=4
 pkgdesc="Complete and free Internet live audio and video broadcasting solution for Linux/Unix"
 arch=(i686 x86_64)
 url="http://ffmpeg.mplayerhq.hu/"
@@ -32,6 +32,9 @@ build() {
   --enable-pthreads \
   --enable-x11grab \
   --enable-swscale \
+  --enable-libamr-nb \
+  --enable-libamr-wb \
+  --enable-nonfree \
   || return 1
 
   make -j 2 || return 1

@@ -32,7 +32,6 @@ build() {
     --enable-libtheora \
     --enable-postproc \
     --enable-shared \
-    --enable-pthreads \
     --enable-x11grab \
     --enable-libopencore_amrnb \
     --enable-libopencore_amrwb \

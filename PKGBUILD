@@ -3,7 +3,7 @@
 # Contributor: Paul Mattal <paul@archlinux.org>
 
 pkgname=ffmpeg
-pkgver=20110618
+pkgver=20110622
 pkgrel=1
 pkgdesc="Complete and free Internet live audio and video broadcasting solution for Linux/Unix"
 arch=('i686' 'x86_64')
@@ -48,3 +48,4 @@ build() {
 }
 
 # vim:set ts=2 sw=2 et:
+md5sums=('6003afa1f87857db729d697e3ec1be36')

@@ -3,7 +3,7 @@
 # Contributor: Paul Mattal <paul@archlinux.org>
 
 pkgname=ffmpeg
-pkgver=20110916
+pkgver=20110923
 pkgrel=1
 pkgdesc="Complete and free Internet live audio and video broadcasting solution for Linux/Unix"
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ depends=('bzip2' 'lame' 'sdl' 'libvorbis' 'xvidcore' 'zlib' 'x264' 'libtheora' '
 makedepends=('yasm' 'git')
 #git clone git://git.videolan.org/ffmpeg.git
 source=(ftp://ftp.archlinux.org/other/ffmpeg/${pkgname}-${pkgver}.tar.xz)
-md5sums=('d065a16866c9bcf4d06c5452b2fbdc56')
+md5sums=('36111c640a2eea19f677924ac3193ce4')
 
 build() {
   cd "$srcdir/$pkgname"
@@ -42,7 +42,10 @@ build() {
   make
   make tools/qt-faststart
   make doc/ff{mpeg,play,server}.1
+}
 
+package() {
+  cd "$srcdir/$pkgname"
   make DESTDIR="$pkgdir" install install-man
   install -D -m755 tools/qt-faststart "$pkgdir/usr/bin/qt-faststart"
 }

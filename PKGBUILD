@@ -4,7 +4,7 @@
 
 pkgname=ffmpeg
 pkgver=1.2
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Complete and free Internet live audio and video broadcasting solution for Linux/Unix"
 arch=('i686' 'x86_64')
@@ -28,6 +28,7 @@ build() {
     --disable-debug \
     --disable-static \
     --enable-avresample \
+    --enable-dxva2 \
     --enable-fontconfig \
     --enable-gpl \
     --enable-libass \
@@ -53,6 +54,7 @@ build() {
     --enable-postproc \
     --enable-runtime-cpudetect \
     --enable-shared \
+    --enable-vdpau \
     --enable-version3 \
     --enable-x11grab
  

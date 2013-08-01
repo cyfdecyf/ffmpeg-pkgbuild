@@ -4,7 +4,7 @@
 
 pkgname=ffmpeg
 pkgver=2.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Complete and free Internet live audio and video broadcasting solution for Linux/Unix"
 arch=('i686' 'x86_64')
@@ -20,14 +20,11 @@ makedepends=('libvdpau' 'yasm')
 source=(http://ffmpeg.org/releases/$pkgname-$pkgver.tar.bz2)
 sha256sums=('940e1bc4f3e185364099b4ba60d4b952615a4232c5641baa3e9f45d4d748130c')
 
-[[ "$CARCH" == i686 ]] && _asm='--disable-asm'
-
 build() {
   cd $pkgname-$pkgver
 
   ./configure \
     --prefix=/usr \
-    $_asm \
     --disable-debug \
     --disable-static \
     --enable-avresample \
@@ -58,6 +55,7 @@ build() {
     --enable-postproc \
     --enable-runtime-cpudetect \
     --enable-shared \
+    --enable-swresample \
     --enable-vdpau \
     --enable-version3 \
     --enable-x11grab

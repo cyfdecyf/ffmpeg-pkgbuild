@@ -5,7 +5,7 @@
 
 pkgname=ffmpeg
 pkgver=2.2.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='Complete and free Internet live audio and video broadcasting solution'
 arch=('i686' 'x86_64')
@@ -31,6 +31,8 @@ build() {
     --disable-static \
     --enable-avisynth \
     --enable-avresample \
+    --enable-decoder=atrac3 \
+    --enable-decoder=atrac3p \
     --enable-dxva2 \
     --enable-fontconfig \
     --enable-gnutls \

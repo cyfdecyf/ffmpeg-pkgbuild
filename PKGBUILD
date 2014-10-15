@@ -1,4 +1,3 @@
-#b $Id$
 # Maintainer:  Ionut Biru <ibiru@archlinux.org>
 # Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
@@ -6,7 +5,7 @@
 
 pkgname=ffmpeg
 pkgver=2.4.2
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='Complete and free Internet live audio and video broadcasting solution'
 arch=('i686' 'x86_64')
@@ -30,6 +29,7 @@ build() {
     --prefix=/usr \
     --disable-debug \
     --disable-static \
+    --disable-stripping \
     --enable-avisynth \
     --enable-avresample \
     --enable-fontconfig \
@@ -62,7 +62,7 @@ build() {
     --enable-swresample \
     --enable-vdpau \
     --enable-version3 \
-    --enable-x11grab
+    --enable-x11grab \
 
   make
   make tools/qt-faststart

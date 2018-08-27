@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=4.0.2
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=('x86_64')
@@ -26,8 +26,7 @@ makedepends=('ffnvcodec-headers' 'git' 'ladspa' 'yasm')
 optdepends=('ladspa: LADSPA filters')
 provides=(
   'libavcodec.so' 'libavdevice.so' 'libavfilter.so' 'libavformat.so'
-  'libavresample.so' 'libavutil.so' 'libpostproc.so' 'libswresample.so'
-  'libswscale.so'
+  'libavutil.so' 'libpostproc.so' 'libswresample.so' 'libswscale.so'
 )
 source=("git+https://git.ffmpeg.org/ffmpeg.git#tag=n${pkgver}")
 sha256sums=('SKIP')
@@ -40,7 +39,6 @@ build() {
     --disable-debug \
     --disable-static \
     --disable-stripping \
-    --enable-avresample \
     --enable-fontconfig \
     --enable-gmp \
     --enable-gnutls \
@@ -76,6 +74,7 @@ build() {
     --enable-libxcb \
     --enable-libxml2 \
     --enable-libxvid \
+    --enable-nvdec \
     --enable-nvenc \
     --enable-omx \
     --enable-shared \

@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=6.0
-pkgrel=6
+pkgrel=7
 epoch=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
@@ -72,6 +72,7 @@ depends=(
   svt-av1
   v4l-utils
   vmaf
+  vulkan-icd-loader
   xz
   zlib
 )

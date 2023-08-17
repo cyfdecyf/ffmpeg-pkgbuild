@@ -64,6 +64,7 @@ depends=(
   ocl-icd
   opencore-amr
   openjpeg2
+  onevpl
   opus
   sdl2
   speex
@@ -92,6 +93,7 @@ optdepends=(
   'intel-media-sdk: Intel QuickSync support'
   'ladspa: LADSPA filters'
   'nvidia-utils: Nvidia NVDEC/NVENC support'
+  'onevpl-intel-gpu: oneVPL runtime implementation for Intel GPUs (Tiger Lake and newer)'
 )
 provides=(
   libavcodec.so
@@ -153,7 +155,7 @@ build() {
     --enable-libiec61883 \
     --enable-libjack \
     --enable-libjxl \
-    --enable-libmfx \
+    --enable-libvpl \
     --enable-libmodplug \
     --enable-libmp3lame \
     --enable-libopencore_amrnb \

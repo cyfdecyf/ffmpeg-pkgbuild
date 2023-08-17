@@ -80,8 +80,6 @@ depends=(
 makedepends=(
   amf-headers
   avisynthplus
-  clang
-  ffnvcodec-headers
   git
   ladspa
   mesa
@@ -140,7 +138,6 @@ build() {
     --disable-stripping \
     --enable-amf \
     --enable-avisynth \
-    --enable-cuda-llvm \
     --enable-lto \
     --enable-libfdk-aac \
     --enable-nonfree \
@@ -190,8 +187,6 @@ build() {
     --enable-libxml2 \
     --enable-libxvid \
     --enable-libzimg \
-    --enable-nvdec \
-    --enable-nvenc \
     --enable-opencl \
     --enable-opengl \
     --enable-shared \

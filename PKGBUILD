@@ -29,6 +29,7 @@ depends=(
   libbs2b.so
   libdav1d.so
   libdrm
+  libfdk-aac
   libfreetype.so
   libgl
   libiec61883
@@ -141,6 +142,8 @@ build() {
     --enable-avisynth \
     --enable-cuda-llvm \
     --enable-lto \
+    --enable-libfdk-aac \
+    --enable-nonfree \
     --enable-fontconfig \
     --enable-gmp \
     --enable-gnutls \

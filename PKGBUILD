@@ -112,14 +112,17 @@ _tag=3949db4d261748a9f34358a388ee255ad1a7f0c0
 source=(
   git+https://git.ffmpeg.org/ffmpeg.git?signed#tag=${_tag}
   add-av_stream_get_first_dts-for-chromium.patch
+  mathops-asm-fix.patch
 )
 b2sums=('SKIP'
-        '555274228e09a233d92beb365d413ff5c718a782008075552cafb2130a3783cf976b51dfe4513c15777fb6e8397a34122d475080f2c4483e8feea5c0d878e6de')
+        '555274228e09a233d92beb365d413ff5c718a782008075552cafb2130a3783cf976b51dfe4513c15777fb6e8397a34122d475080f2c4483e8feea5c0d878e6de'
+        '0de8441c71735cd817c8d0c601ba848b1751c8c2d8f45b07baedf0b6e9061a8dba01e3cfca608232e8d78417bacac60dd1bce58125b698434e20da50e6b9723e')
 validpgpkeys=(DD1EC9E8DE085C629B3E1846B18E8928B3948D64) # Michael Niedermayer <michael@niedermayer.cc>
 
 prepare() {
   cd ffmpeg
   patch -Np1 -i ../add-av_stream_get_first_dts-for-chromium.patch # https://crbug.com/1251779
+  patch -Np1 -i ../mathops-asm-fix.patch # https://trac.ffmpeg.org/ticket/10405
 }
 
 pkgver() {
